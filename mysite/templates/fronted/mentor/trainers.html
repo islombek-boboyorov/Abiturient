@@ -1,0 +1,40 @@
+{% extends 'fronted/base.html'%}
+{% load static %}
+{% block content %}
+<div class="breadcrumbs">
+  <div class="container">
+    <h2>Trainers</h2>
+    <p>Est dolorum ut non facere possimus quibusdam eligendi voluptatem. Quia id aut similique quia voluptas sit quaerat debitis. Rerum omnis ipsam aperiam consequatur laboriosam nemo harum praesentium. </p>
+  </div>
+</div>
+<section id="trainers" class="trainers">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row" data-aos="zoom-in" data-aos-delay="100">
+          {% for cor in trainer %}
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <img src="/media/{{cor.image}}" class="img-fluid" alt="">
+              <div class="member-content">
+                <h4>{{cor.name}}</h4>
+                <span>{{cor.profession}}</span>
+                <p>
+                  {{cor.description}}
+                </p>
+                <div class="social">
+                  <a href="{{cor.twitter}}"><i class="bi bi-twitter"></i></a>
+                  <a href="{{cor.facebook}}"><i class="bi bi-facebook"></i></a>
+                  <a href="{{cor.instagram}}"><i class="bi bi-instagram"></i></a>
+                  <a href="{{cor.inn}}"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+
+        </div>
+
+      </div>
+    </section>
+{% endblock %}
+

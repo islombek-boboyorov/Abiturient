@@ -1,0 +1,39 @@
+{% extends 'fronted/base.html'%}
+{% load static %}
+{% block content %}
+<div class="breadcrumbs" data-aos="fade-in">
+  <div class="container">
+    <h2>Pricing</h2>
+    <p>Est dolorum ut non facere possimus quibusdam eligendi voluptatem. Quia id aut similique quia voluptas sit quaerat debitis. Rerum omnis ipsam aperiam consequatur laboriosam nemo harum praesentium. </p>
+  </div>
+</div>
+<section id="pricing" class="pricing">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          {% for pric in pricings %}
+          <div class="col-lg-3 col-md-6 mt-4 mt-md-0">
+            <div class="box featured">
+              <h3>{{pric.title}}</h3>
+              <h4><sup>$</sup>{{pric.price}}<span> / month</span></h4>
+              <ul>
+                {% for pro in pricing_1 %}
+                {% if pro.pricing_id == pric.id %}
+                <li>{{pro.name}}</li>
+                {% endif %}
+                {% endfor %}
+              </ul>
+              <div class="btn-wrap">
+                <a href="#" class="btn-buy">Buy Now</a>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+
+        </div>
+
+      </div>
+    </section>
+{% endblock %}
+
+
